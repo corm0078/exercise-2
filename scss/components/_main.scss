@@ -32,14 +32,10 @@ body{
     text-align: center;
 }
 
-.intro{
-    height: 100vh;
-    width: 100%;
-    background-image: url("../img/main.jpg");
-    background-color:  transparent;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.intro{ @include photo-section(url("../img/main.jpg"));
+}
+
+.intro i{ @include cercle-button($primary-bleu);
 }
 
 .intro h1{
@@ -48,26 +44,10 @@ body{
   color: #fff;    
 }
 
-.intro i{
- padding: 0;
- color: #fff;
+.plane{ @include photo-section(url("../img/plane.jpg"));
 }
 
-
-.plane{
-    height: 100vh;
-    width: 100%;
-    background-image: url("../img/plane.jpg");
-    background-color:  transparent;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-align: center;   
-}
-
-.plane i{
-    padding: 0;
-    color: #fff;  
+.plane i{ @include cercle-button($primary-green);
 }
 
 .plane h2{
@@ -76,14 +56,8 @@ body{
   color: #fff;    
 }
 
-.sea{
-    height: 100vh;
-    width: 100%;
-    background-color: #269f67;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-align: center;    
+.sea{ @include section-color($primary-green);
+     
 }
 
 .sea h2{
@@ -97,14 +71,8 @@ body{
     color:  #fff;
 }
 
-.globe{
-    height: 100vh;
-    width: 100%;
-    background-color: #259bb1;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-align: center;
+.globe{ @include section-color($primary-bleu);
+    
 }
 
 .globe i{
@@ -119,19 +87,34 @@ body{
 }
 
 
-a:link i{
+.sea a:link i,
+.globe a:link i{
  font-size: 11rem;
 }
 
-
-a:hover i{
- font-size: 12rem;    
- -webkit-transition: all 350ms ease-in-out;
- -moz-transition: all 350ms ease-in-out;
- -ms-transition: all 350ms ease-in-out;
- -o-transition: all 350ms ease-in-out;
-  transition: all 350ms ease-in-out;    
+.sea a:hover i,
+.globe a:hover i{ @include hover-icon(16rem);   
 }
+
+.intro a:link i,
+.plane a:link i{
+ font-size: 8rem;
+}
+
+
+.intro a:hover i,
+.plane a:hover i{ @include hover-icon(11rem);
+}
+
+
+.intro a:hover i{
+ background-color: $hover-bleu;    
+}
+
+.plane a:hover i{
+ background-color: $hover-green;    
+}
+
 
 .hide-text {
 	text-indent: 100%;
